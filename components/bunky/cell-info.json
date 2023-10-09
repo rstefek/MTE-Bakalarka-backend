@@ -19,6 +19,9 @@
       "type": "component",
       "repeatable": false,
       "component": "bunky.cell-signal-strength"
+    },
+    "connection_status": {
+      "type": "integer"
     }
   }
 }
