@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uid": {
+      "type": "uid"
+    },
+    "happened": {
+      "type": "datetime"
+    },
+    "event_group": {
+      "model": "event-group"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "network_type": {
+      "type": "enumeration",
+      "enum": [
+        "G2",
+        "G3",
+        "G4",
+        "G5"
+      ]
+    },
+    "cells": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bunky.cell-info"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_bunky_cell_identities",
+  "info": {
+    "name": "CellIdentity",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "mnc": {
+      "type": "string"
+    },
+    "lac": {
+      "type": "integer"
+    },
+    "tac": {
+      "type": "integer"
+    },
+    "cid": {
+      "type": "biginteger"
+    },
+    "arfcn": {
+      "type": "integer"
+    },
+    "pci": {
+      "type": "integer"
+    },
+    "bs": {
+      "type": "integer"
+    },
+    "banwidth": {
+      "type": "integer"
+    }
+  }
+}

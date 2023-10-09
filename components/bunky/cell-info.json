@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_bunky_cell_infos",
+  "info": {
+    "name": "CellInfo",
+    "icon": "archway",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "registered": {
+      "type": "boolean"
+    },
+    "identity": {
+      "type": "component",
+      "repeatable": false,
+      "component": "bunky.cell-identity"
+    },
+    "signal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "bunky.cell-signal-strength"
+    }
+  }
+}

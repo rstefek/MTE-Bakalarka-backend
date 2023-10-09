@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_groups",
+  "info": {
+    "name": "Event Group"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

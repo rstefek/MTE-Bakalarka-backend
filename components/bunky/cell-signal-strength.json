@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_bunky_cell_signal_strengths",
+  "info": {
+    "name": "CellSignalStrength",
+    "icon": "battery-full"
+  },
+  "options": {},
+  "attributes": {
+    "signal_dbm": {
+      "type": "integer"
+    },
+    "timing_advance": {
+      "type": "integer"
+    },
+    "band": {
+      "type": "integer"
+    },
+    "rssi_dbm": {
+      "type": "integer"
+    },
+    "signal_asu": {
+      "type": "integer"
+    },
+    "channel_quality": {
+      "type": "integer"
+    },
+    "rsrp_dbm": {
+      "type": "integer"
+    },
+    "rsrq_dbm": {
+      "type": "integer"
+    },
+    "rssnr_db": {
+      "type": "integer"
+    }
+  }
+}

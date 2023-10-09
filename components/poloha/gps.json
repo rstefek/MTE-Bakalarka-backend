@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_poloha_gps",
+  "info": {
+    "name": "gps",
+    "icon": "directions"
+  },
+  "options": {},
+  "attributes": {
+    "lat": {
+      "type": "float"
+    },
+    "lon": {
+      "type": "float"
+    }
+  }
+}
