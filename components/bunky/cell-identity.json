@@ -2,7 +2,8 @@
   "collectionName": "components_bunky_cell_identities",
   "info": {
     "name": "CellIdentity",
-    "icon": "address-book"
+    "icon": "address-book",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -27,7 +28,7 @@
     "bs": {
       "type": "integer"
     },
-    "banwidth": {
+    "bandwidth": {
       "type": "integer"
     }
   }
