@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devices",
+  "info": {
+    "name": "Device",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "imei": {
+      "type": "string"
+    },
+    "imsi": {
+      "type": "string"
+    },
+    "subscription_id": {
+      "type": "biginteger"
+    }
+  }
+}
