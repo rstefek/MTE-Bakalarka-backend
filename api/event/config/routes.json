@@ -18,6 +18,14 @@
     },
     {
       "method": "GET",
+      "path": "/events/export",
+      "handler": "event.export",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/events/:id",
       "handler": "event.findOne",
       "config": {
