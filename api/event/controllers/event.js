@@ -12,7 +12,7 @@ module.exports = {
 
         //let {transId, refId, status} = ctx.request.body
         
-        const events = await strapi.services.event.find({ _limit: -1 });
+        const events = await strapi.services.event.find({ ...ctx.query, _limit: -1 });
     
         ctx.set('Content-Type', 'text/csv');
 
@@ -31,13 +31,13 @@ module.exports = {
                 row.push(rc.identity.cid - (lac*256));
                 row.push(lac);
                 row.push(rc.identity.mnc);
+                row.push(el.network_type == "G2" ? "GSM" : "LTE");
                 row.push(rc.identity.cid);
             }
             
             out += row.join(";")+"\n";
         });
         
-        //return out;
         return out;
     }
 };
