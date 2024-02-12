@@ -16,7 +16,20 @@ module.exports = {
     
         ctx.set('Content-Type', 'text/csv');
 
-        var out = "";
+        var row = [];
+        row.push("Datum");
+        row.push("Cas");
+        row.push("LAT");
+        row.push("LON");
+        row.push("Bunka vypoctena (ID)");
+        row.push("Bunka vypoctena (LAC)");
+        row.push("Operator");
+        row.push("Typ site");
+        row.push("ID bunky");
+        row.push("LAC");
+
+        var out = row.join(";")+"\n";
+
         events.forEach(el => {
             var row = [];
             var dtm = moment(el.happened);
@@ -33,6 +46,7 @@ module.exports = {
                 row.push(rc.identity.mnc);
                 row.push(el.network_type == "G2" ? "GSM" : "LTE");
                 row.push(rc.identity.cid);
+                row.push(rc.identity.lac);
             }
             
             out += row.join(";")+"\n";
