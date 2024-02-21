@@ -41,6 +41,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/events/bulk",
+      "handler": "event.bulkInsert",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
       "path": "/events/:id",
       "handler": "event.update",

@@ -53,5 +53,20 @@ module.exports = {
         });
         
         return out;
+    },
+    bulkInsert: async (ctx, next) => {
+        var events = ctx.request.body;
+        var savedIds = [];
+
+        const promises = events.map(async el => {            
+            const eventSaved = await strapi.services.event.create(el);
+            if(eventSaved) {
+                savedIds.push(eventSaved.uid);
+            }
+        });
+
+        await Promise.all(promises)
+
+        return savedIds;
     }
 };
