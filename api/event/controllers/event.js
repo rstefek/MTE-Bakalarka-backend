@@ -59,13 +59,17 @@ module.exports = {
         var savedIds = [];
         var errorIds = [];
 
-        const promises = events.map(async el => {            
-            const eventSaved = await strapi.services.event.create(el);
-            if(eventSaved) {
-                savedIds.push(eventSaved.uid);
-            } else {
-                errorIds.push(eventSaved.uid);
-            }
+        const promises = events.map(async el => {
+            try {
+                const eventSaved = await strapi.services.event.create(el);
+                if(eventSaved) {
+                    savedIds.push(eventSaved.uid);
+                } else {
+                    errorIds.push(eventSaved.uid);
+                }                    
+            } catch (error) {
+                errorIds.push(eventSaved.uid);Ł
+            }   
         });
 
         await Promise.all(promises)
