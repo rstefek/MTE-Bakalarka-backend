@@ -57,16 +57,19 @@ module.exports = {
     bulkInsert: async (ctx, next) => {
         var events = ctx.request.body;
         var savedIds = [];
+        var errorIds = [];
 
         const promises = events.map(async el => {            
             const eventSaved = await strapi.services.event.create(el);
             if(eventSaved) {
                 savedIds.push(eventSaved.uid);
+            } else {
+                errorIds.push(eventSaved.uid);
             }
         });
 
         await Promise.all(promises)
 
-        return savedIds;
+        return {saved: savedIds, errors: errorIds};
     }
 };
