@@ -35,8 +35,8 @@ module.exports = {
             var dtm = moment(el.happened);
             row.push(dtm.format("DD.MM.YYYY"));
             row.push(dtm.format("HH:mm:ss"));
-            row.push(el.position.lat);
-            row.push(el.position.lon);
+            row.push(el.position ? el.position.lat : 0);
+            row.push(el.position ? el.position.lon : 0);
             var regCells = el.cells.filter(c => c.registered == true)
             if(regCells.length > 0)  {
                 var rc = regCells[0];                
@@ -44,10 +44,11 @@ module.exports = {
                 row.push(rc.identity.cid - (lac*256));
                 row.push(lac);
                 row.push(rc.identity.mnc);
-                row.push(el.network_type == "G2" ? "GSM" : "LTE");
+                row.push(rc.network_type == "G2" ? "GSM" : "LTE");
                 row.push(rc.identity.cid);
                 row.push(rc.identity.lac);
             }
+            row.push(el.user_description);
             
             out += row.join(";")+"\n";
         });
