@@ -65,10 +65,10 @@ module.exports = {
                 if(eventSaved) {
                     savedIds.push(eventSaved.uid);
                 } else {
-                    errorIds.push(eventSaved.uid);
+                    errorIds.push(el.uid);
                 }                    
             } catch (error) {
-                errorIds.push(eventSaved.uid);Ł
+                errorIds.push(el.uid);
             }   
         });
 
