@@ -12,7 +12,7 @@ module.exports = {
 
         //let {transId, refId, status} = ctx.request.body
         
-        const events = await strapi.services.event.find({ ...ctx.query, _limit: -1 });
+        const events = await strapi.services.event.find({ ...ctx.query, _limit: -1, _sort: 'happened:asc' });
     
         ctx.set('Content-Type', 'text/csv');
 
